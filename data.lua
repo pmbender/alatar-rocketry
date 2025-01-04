@@ -1,3 +1,7 @@
+--"J-2X" (https://skfb.ly/6SqsG) by MartianDays is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+--"J-2S" (https://skfb.ly/6UxUF) by MartianDays is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
+
 require("prototypes.recipe")
 require("prototypes.entity")
 require("prototypes.item")

@@ -5,7 +5,7 @@ data:extend({
     enabled = true,
     ingredients =
     {
-      {type = "item", name = "steel-plate", amount = 10},
+      {type = "item", name = "tungsten-plate", amount = 10},
       {type = "item", name = "processing-unit", amount = 10},
       {type = "item", name = "electric-engine-unit", amount = 5}
     },

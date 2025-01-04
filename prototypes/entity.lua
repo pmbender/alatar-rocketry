@@ -4,19 +4,19 @@ local space_age_sounds = require ("__space-age__.prototypes.entity.sounds")
 data:extend({
     {
         type = "thruster",
-        name = "thruster",
+        name = "vac-thruster",
         flags = {"placeable-neutral", "placeable-player", "player-creation"},
         icon = "__realistic-rocketry__/graphics/icons/vac-thruster.png",
-        collision_box = {{-1.7, -2.2}, {1.7, 2.2}},
+        collision_box = {{-2.55, -3.3}, {2.55, 3.3}},
         collision_mask = {layers={item=true, object=true, train=true, is_lower_object = true, is_object = true}},
-        selection_box = {{-2, -2.5}, {2, 5.5}},
+        selection_box = {{-3, -3.75}, {3, 8.25}},
         tile_buildability_rules =
         {
-            {area = {{-1.8, -2.3}, {1.8, 2.3}}, required_tiles = {layers={ground_tile=true}}, colliding_tiles = {layers={empty_space=true}}, remove_on_collision = true},
-            {area = {{-1.8, 2.7}, {1.8, 90.3}}, required_tiles = {layers={empty_space=true}}, remove_on_collision = true},
+            {area = {{-2.7, -3.45}, {2.7, 3.45}}, required_tiles = {layers={ground_tile=true}}, colliding_tiles = {layers={empty_space=true}}, remove_on_collision = true},
+            {area = {{-2.7, 4.05}, {2.7, 90.3}}, required_tiles = {layers={empty_space=true}}, remove_on_collision = true},
         },
         max_health = 300,
-        minable = {mining_time = 0.1, result = "thruster"},
+        minable = {mining_time = 0.1, result = "vac-thruster"},
         fast_replaceable_group = "thruster",
         impact_category = "metal",
         surface_conditions =
@@ -27,13 +27,12 @@ data:extend({
                 max = 0
             }
         },
-        min_performance = {fluid_volume = 0.1, fluid_usage = 0.1, effectivity = 1},
-        max_performance = {fluid_volume = 0.8, fluid_usage = 2, effectivity = 0.51},
+        min_performance = {fluid_volume = 0.1, fluid_usage = 0.1, effectivity = 1}, 
+        max_performance = {fluid_volume = 0.8, fluid_usage = 2, effectivity = 0.75},
         fuel_fluid_box =
         {
             filter = "thruster-fuel",
             production_type = "input",
-            -- pipe_covers = pipecoverspictures(),
             draw_only_when_connected = true,
             volume = 1000,
             pipe_connections =
@@ -46,7 +45,6 @@ data:extend({
         {
             filter = "thruster-oxidizer",
             production_type = "input",
-            -- pipe_covers = pipecoverspictures(),
             draw_only_when_connected = true,
             volume = 1000,
             pipe_connections =
@@ -73,13 +71,13 @@ data:extend({
                     shift = {0,3}
                 }
             ),
---            integration_patch_render_layer = "floor",
---            integration_patch = util.sprite_load("__realistic-rocketry__/graphics/entity/vac-thruster/thruster-bckg",
---                {
---                    scale = 0.5,
---                    shift = {0,3}
---                }
---            ),
+            integration_patch_render_layer = "floor",
+            integration_patch = util.sprite_load("__realistic-rocketry__/graphics/entity/vac-thruster/thruster-bckg",
+                {
+                    scale = 0.5,
+                    shift = {0,3}
+                }
+            ),
             working_visualisations =
             {
                 {

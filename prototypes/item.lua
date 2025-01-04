@@ -10,7 +10,7 @@ data:extend({
         inventory_move_sound = space_age_item_sounds.rocket_inventory_move,
         pick_sound = space_age_item_sounds.rocket_inventory_pickup,
         drop_sound = space_age_item_sounds.rocket_inventory_move,
---        place_result = "vac-thruster",
+        place_result = "vac-thruster",
         stack_size = 10,
         weight = 300*kg
     },

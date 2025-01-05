@@ -7,7 +7,7 @@ data:extend({
         name = "vac-thruster",
         flags = {"placeable-neutral", "placeable-player", "player-creation"},
         icon = "__realistic-rocketry__/graphics/icons/vac-thruster.png",
-        collision_box = {{-4.7, -5.25}, {4.7, 0}},
+        collision_box = {{-4.7, -5}, {4.7, 0}},
         collision_mask = {layers={item=true, object=true, train=true, is_lower_object = true, is_object = true}},
         selection_box = {{-5, -5.5}, {5, 9}},
         tile_buildability_rules =
@@ -33,22 +33,20 @@ data:extend({
         {
             filter = "thruster-fuel",
             production_type = "input",
-            draw_only_when_connected = false,
             volume = 1000,
             pipe_connections =
             {
-                {flow_direction = "input", direction = 0, position = { -1.45, -4.9}},
+                {flow_direction = "input", direction = 0, position = { -1.5, -5}},
             }
         },
         oxidizer_fluid_box =
         {
             filter = "thruster-oxidizer",
             production_type = "input",
-            draw_only_when_connected = true,
             volume = 1000,
             pipe_connections =
             {
-                {flow_direction = "input", direction = 0, position = { 1.45, -4.9}},
+                {flow_direction = "input", direction = 0, position = { 1.5, -5}},
             }
         },
         placeable_position_visualization =
@@ -72,64 +70,12 @@ data:extend({
             integration_patch_render_layer = "floor",
             integration_patch = util.sprite_load("__realistic-rocketry__/graphics/entity/vac-thruster/thruster-bckg",
                 {
-                    scale = 0.5,
+                    scale = 0.45,
                     shift = {0,3}
                 }
             ),
             working_visualisations =
             {
-                {
-                    always_draw = true,
-                    name = "pipe-1",
-                    enabled_by_name = true,
-                    animation =
-                    {
-                        filename = "__realistic-rocketry__/graphics/entity/vac-thruster/thruster-pipe-connection-1.png",
-                        width = 384,
-                        height = 832,
-                        shift = util.by_pixel(0, 95),
-                        scale = 0.5
-                    }
-                },
-                {
-                    always_draw = true,
-                    name = "pipe-2",
-                    enabled_by_name = true,
-                    animation =
-                    {
-                        filename = "__realistic-rocketry__/graphics/entity/vac-thruster/thruster-pipe-connection-2.png",
-                        width = 384,
-                        height = 832,
-                        shift = util.by_pixel(0, 96),
-                        scale = 0.5
-                    }
-                },
-                {
-                    always_draw = true,
-                    name = "pipe-3",
-                    enabled_by_name = true,
-                    animation =
-                    {
-                        filename = "__realistic-rocketry__/graphics/entity/vac-thruster/thruster-pipe-connection-3.png",
-                        width = 384,
-                        height = 832,
-                        shift = util.by_pixel(0, 96),
-                        scale = 0.5
-                    }
-                },
-                {
-                    always_draw = true,
-                    name = "pipe-4",
-                    enabled_by_name = true,
-                    animation =
-                    {
-                        filename = "__realistic-rocketry__/graphics/entity/vac-thruster/thruster-pipe-connection-4.png",
-                        width = 384,
-                        height = 832,
-                        shift = util.by_pixel(0, 95),
-                        scale = 0.5
-                    }
-                },
                 {
                     fadeout = true,
                     animation = util.sprite_load("__realistic-rocketry__/graphics/entity/vac-thruster/thruster-light",

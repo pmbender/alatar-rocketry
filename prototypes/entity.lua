@@ -7,13 +7,13 @@ data:extend({
         name = "vac-thruster",
         flags = {"placeable-neutral", "placeable-player", "player-creation"},
         icon = "__realistic-rocketry__/graphics/icons/vac-thruster.png",
-        collision_box = {{-2.55, -3.3}, {2.55, 3.3}},
+        collision_box = {{-4.7, -5.25}, {4.7, 0}},
         collision_mask = {layers={item=true, object=true, train=true, is_lower_object = true, is_object = true}},
-        selection_box = {{-3, -3.75}, {3, 8.25}},
+        selection_box = {{-5, -5.5}, {5, 9}},
         tile_buildability_rules =
         {
-            {area = {{-2.7, -3.45}, {2.7, 3.45}}, required_tiles = {layers={ground_tile=true}}, colliding_tiles = {layers={empty_space=true}}, remove_on_collision = true},
-            {area = {{-2.7, 4.05}, {2.7, 90.3}}, required_tiles = {layers={empty_space=true}}, remove_on_collision = true},
+            {area = {{-4.8, -5.35}, {4.8, 0.1}}, required_tiles = {layers={ground_tile=true}}, colliding_tiles = {layers={empty_space=true}}, remove_on_collision = true},
+            {area = {{-4.8, 1}, {4.8, 90.3}}, required_tiles = {layers={empty_space=true}}, remove_on_collision = true},
         },
         max_health = 300,
         minable = {mining_time = 0.1, result = "vac-thruster"},
@@ -33,12 +33,11 @@ data:extend({
         {
             filter = "thruster-fuel",
             production_type = "input",
-            draw_only_when_connected = true,
+            draw_only_when_connected = false,
             volume = 1000,
             pipe_connections =
             {
-                {flow_direction = "input-output", direction = defines.direction.west, position = {-1.5, -2}, enable_working_visualisations = { "pipe-4" } },
-                {flow_direction = "input-output", direction = defines.direction.east, position = { 1.5,  0}, enable_working_visualisations = { "pipe-2" } },
+                {flow_direction = "input", direction = 0, position = { -1.45, -4.9}},
             }
         },
         oxidizer_fluid_box =
@@ -49,8 +48,7 @@ data:extend({
             volume = 1000,
             pipe_connections =
             {
-                {flow_direction = "input-output", direction = defines.direction.east, position = { 1.5, -2}, enable_working_visualisations = { "pipe-1" }},
-                {flow_direction = "input-output", direction = defines.direction.west, position = {-1.5,  0}, enable_working_visualisations = { "pipe-3" }},
+                {flow_direction = "input", direction = 0, position = { 1.45, -4.9}},
             }
         },
         placeable_position_visualization =
@@ -67,7 +65,7 @@ data:extend({
                 {
                     animation_speed = 0.5,
                     frame_count = 64,
-                    scale = 0.5,
+                    scale = 0.45,
                     shift = {0,3}
                 }
             ),

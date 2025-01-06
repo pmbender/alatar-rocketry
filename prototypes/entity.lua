@@ -62,7 +62,7 @@ data:extend({
             animation = util.sprite_load("__realistic-rocketry__/graphics/entity/vac-thruster/thruster",
                 {
                     animation_speed = 0.5,
-                    frame_count = 64,
+                    frame_count = 1,
                     scale = 0.45,
                     shift = {0,3}
                 }
@@ -81,11 +81,11 @@ data:extend({
                     animation = util.sprite_load("__realistic-rocketry__/graphics/entity/vac-thruster/thruster-light",
                         {
                             animation_speed = 0.5,
-                            frame_count = 64,
+                            frame_count = 1,
                             blend_mode = "additive",
                             draw_as_glow = true,
-                            scale = 0.5,
-                            shift = {0,3}
+                            scale = 0.45,
+                            shift = {0,9.3}
                         }
                     ),
                 },

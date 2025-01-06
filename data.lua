@@ -100,7 +100,7 @@ data.raw["thruster"]["thruster"].graphics_set =
   integration_patch_render_layer = "floor",
   integration_patch = util.sprite_load("__realistic-rocketry__/graphics/entity/sl-thruster/thruster-bckg",
                       {
-                        scale = 0.5,
+                        scale = 0.4,
                         shift = {0,3}
                       }),
 

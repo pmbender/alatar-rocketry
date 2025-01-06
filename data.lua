@@ -6,6 +6,11 @@ require("prototypes.recipe")
 require("prototypes.entity")
 require("prototypes.item")
 
+-------------------------------------------------------------------------- Misc Prototype Modifications
+
+data.raw["fluid"]["thruster-fuel"].auto_barrel = true
+data.raw["fluid"]["thruster-oxidizer"].auto_barrel = true
+
 -------------------------------------------------------------------------- Recipe Modifications
 
 data.raw.recipe["rocket-part"].ingredients =
@@ -49,7 +54,80 @@ data.raw["rocket-silo"]["rocket-silo"].fluid_boxes =
   }
 }
 
--------------------------------------------------------------------------- Misc Prototype Modifications
+-------------------------------------------------------------------------- Thruster Modifications
 
-data.raw["fluid"]["thruster-fuel"].auto_barrel = true
-data.raw["fluid"]["thruster-oxidizer"].auto_barrel = true
+data.raw["thruster"]["thruster"].collision_box = {{-2.5, -2.2}, {2.5, 2.2}}
+data.raw["thruster"]["thruster"].selection_box = {{-3, -2.5}, {3, 6.5}}
+
+data.raw["thruster"]["thruster"].tile_buildability_rules =
+{
+  {area = {{-2.6, -2.3}, {2.6, 2.3}}, required_tiles = {layers={ground_tile=true}}, colliding_tiles = {layers={empty_space=true}}, remove_on_collision = true},
+  {area = {{-2.6, 2.7}, {2.6, 90.3}}, required_tiles = {layers={empty_space=true}}, remove_on_collision = true},
+}
+
+data.raw["thruster"]["thruster"].fuel_fluid_box =
+{
+  filter = "thruster-fuel",
+  production_type = "input",
+  volume = 1000,
+  pipe_connections =
+  {
+    {flow_direction = "input", direction = 0, position = {-1, -2}}
+  }
+}
+
+data.raw["thruster"]["thruster"].oxidizer_fluid_box =
+{
+  filter = "thruster-oxidizer",
+  production_type = "input",
+  volume = 1000,
+  pipe_connections =
+  {
+    {flow_direction = "input", direction = 0, position = { 1, -2}}
+  }
+}
+
+data.raw["thruster"]["thruster"].graphics_set =
+{
+  animation = util.sprite_load("__realistic-rocketry__/graphics/entity/sl-thruster/thruster",
+              {
+                animation_speed = 0.5,
+                frame_count = 1,
+                scale = 0.4,
+                shift = {0,3}
+              }),
+
+  integration_patch_render_layer = "floor",
+  integration_patch = util.sprite_load("__realistic-rocketry__/graphics/entity/sl-thruster/thruster-bckg",
+                      {
+                        scale = 0.5,
+                        shift = {0,3}
+                      }),
+
+  working_visualisations =
+  {
+    {
+            fadeout = true,
+            animation = util.sprite_load("__realistic-rocketry__/graphics/entity/sl-thruster/thruster-light",
+                          {
+                            animation_speed = 0.5,
+                            frame_count = 64,
+                            blend_mode = "additive",
+                            draw_as_glow = true,
+                            scale = 0.5,
+                            shift = {0,3}
+                          }),
+    },
+  },
+  flame_effect =
+  {
+    filename = "__realistic-rocketry__/graphics/entity/sl-thruster/thruster-flame.png",
+    width = 384,
+    height = 832
+  },
+  flame_position = {0, 5.5},
+  flame_half_height = 0,
+  flame_effect_height = 1000 / 32,
+  flame_effect_width = 384 / 64,
+  flame_effect_offset = 50 / 32,
+}

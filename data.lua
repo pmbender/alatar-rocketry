@@ -1,6 +1,6 @@
 --"J-2X" (https://skfb.ly/6SqsG) by MartianDays is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 --"J-2S" (https://skfb.ly/6UxUF) by MartianDays is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
-
+--"Blue Origin BE-4" (https://skfb.ly/6X9H9) by MartianDays is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
 require("prototypes.recipe")
 require("prototypes.entity")
@@ -55,7 +55,9 @@ data.raw["rocket-silo"]["rocket-silo"].fluid_boxes =
 }
 
 -------------------------------------------------------------------------- Thruster Modifications
+data.raw.item["thruster"].icon = "__realistic-rocketry__/graphics/icons/sl-thruster.png"
 
+data.raw["thruster"]["thruster"].icon = "__realistic-rocketry__/graphics/icons/sl-thruster.png"
 data.raw["thruster"]["thruster"].collision_box = {{-2.5, -2.2}, {2.5, 2.2}}
 data.raw["thruster"]["thruster"].selection_box = {{-3, -2.5}, {3, 6.5}}
 data.raw["thruster"]["thruster"].plumes = nil

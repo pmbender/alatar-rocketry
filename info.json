@@ -1,9 +1,9 @@
 {
-  "name": "realistic-rocketry",
-  "version": "0.1.0",
-  "title": "Realistic Rocketry",
-  "author": "AlatarIstarion",
-  "factorio_version": "2.0",
-  "dependencies": ["base >= 2.0", "space-age"],
-  "description": "This mod makes rockets behave in a more realistic way."
+    "name": "realistic-rocketry",
+    "version": "0.1.0",
+    "title": "Realistic Rocketry",
+    "author": "Niennandil",
+    "factorio_version": "2.0",
+    "dependencies": ["base >= 2.0", "space-age"],
+    "description": "This mod makes rockets behave in a more realistic way."
 }

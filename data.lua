@@ -59,7 +59,7 @@ data.raw.item["thruster"].icon = "__realistic-rocketry__/graphics/icons/sl-thrus
 
 data.raw["thruster"]["thruster"].icon = "__realistic-rocketry__/graphics/icons/sl-thruster.png"
 data.raw["thruster"]["thruster"].collision_box = {{-2.5, -2.2}, {2.5, 2.2}}
-data.raw["thruster"]["thruster"].selection_box = {{-3, -2.5}, {3, 6.5}}
+data.raw["thruster"]["thruster"].selection_box = {{-3, -2.5}, {3, 6}}
 data.raw["thruster"]["thruster"].plumes = nil
 
 data.raw["thruster"]["thruster"].tile_buildability_rules =

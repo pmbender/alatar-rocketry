@@ -163,13 +163,13 @@ data:extend({
         name = "nuclear-thruster",
         flags = {"placeable-neutral", "placeable-player", "player-creation"},
         icon = "__realistic-rocketry__/graphics/icons/nuclear-thruster.png",
-        collision_box = {{-4.7, -5}, {4.7, 0}},
+        collision_box = {{-4.7, -7}, {4.7, 1}},
         collision_mask = {layers={item=true, object=true, train=true, is_lower_object = true, is_object = true}},
-        selection_box = {{-5, -5.5}, {5, 9}},
+        selection_box = {{-5, -7.5}, {5, 9.5}},
         tile_buildability_rules =
         {
-            {area = {{-4.8, -5.35}, {4.8, 0.1}}, required_tiles = {layers={ground_tile=true}}, colliding_tiles = {layers={empty_space=true}}, remove_on_collision = true},
-            {area = {{-4.8, 1}, {4.8, 90.3}}, required_tiles = {layers={empty_space=true}}, remove_on_collision = true},
+            {area = {{-4.8, -7.35}, {4.8, 1.1}}, required_tiles = {layers={ground_tile=true}}, colliding_tiles = {layers={empty_space=true}}, remove_on_collision = true},
+            {area = {{-4.8, 2}, {4.8, 90.3}}, required_tiles = {layers={empty_space=true}}, remove_on_collision = true},
         },
         max_health = 300,
         minable = {mining_time = 0.1, result = "nuclear-thruster"},
@@ -183,26 +183,26 @@ data:extend({
                 max = 0
             }
         },
-        min_performance = {fluid_volume = 0.1, fluid_usage = 0.1, effectivity = 1}, 
-        max_performance = {fluid_volume = 0.8, fluid_usage = 1.5, effectivity = 0.60},
+        min_performance = {fluid_volume = 0.1, fluid_usage = 1, effectivity = 1}, 
+        max_performance = {fluid_volume = 0.8, fluid_usage = 1.5, effectivity = 1},
         fuel_fluid_box =
         {
-            filter = "thruster-fuel",
-            production_type = "input",
-            volume = 1000,
+            filter = "water",
+            production_type = "none",
+            volume = 500,
             pipe_connections =
             {
-                {flow_direction = "input", direction = 0, position = { -1.5, -5}},
+                {flow_direction = "input", direction = 0, position = { 1.5, -7}},
             }
         },
         oxidizer_fluid_box =
         {
-            filter = "thruster-oxidizer",
+            filter = "water",
             production_type = "input",
-            volume = 1000,
+            volume = 500,
             pipe_connections =
             {
-                {flow_direction = "input", direction = 0, position = { 1.5, -5}},
+                {flow_direction = "input", direction = defines.direction.north, position = { 2.5, -7}},
             }
         },
         placeable_position_visualization =
@@ -210,7 +210,7 @@ data:extend({
             filename = "__core__/graphics/cursor-boxes-32x32.png",
             priority = "extra-high-no-scale",
             size = 64,
-            scale = 0.5,
+            scale = 0.45,
             x = 3 * 64
         },
         graphics_set =

@@ -234,14 +234,14 @@ data:extend({
             {
                 {
                     fadeout = true,
-                    animation = util.sprite_load("__realistic-rocketry__/graphics/entity/vac-thruster/thruster-light",
+                    animation = util.sprite_load("__realistic-rocketry__/graphics/entity/nuclear-thruster/nuclear-thruster-light",
                         {
                             animation_speed = 0.5,
                             frame_count = 1,
                             blend_mode = "additive",
                             draw_as_glow = true,
                             scale = 0.45,
-                            shift = {0,9.3}
+                            shift = {0,8.1}
                         }
                     ),
                 },
@@ -249,13 +249,13 @@ data:extend({
             flame_effect =
             {
                 filename = "__realistic-rocketry__/graphics/entity/vac-thruster/thruster-flame.png",
-                width = 700,
-                height = 1517
+                width = 550,
+                height = 1414
             },
-            flame_position = {0, 6.9},
+            flame_position = {0, 8.5},
             flame_half_height = 0,
             flame_effect_height = 1000 / 32,
-            flame_effect_width = 700 / 64,
+            flame_effect_width = 550 / 64,
             flame_effect_offset = 50 / 32,
         },
         damaged_trigger_effect = hit_effects.entity(),

@@ -59,7 +59,7 @@ data:extend({
         },
         graphics_set =
         {
-            animation = util.sprite_load("__realistic-rocketry__/graphics/entity/vac-thruster/thruster",
+            animation = util.sprite_load("__realistic-rocketry__/graphics/entity/vac-thruster/vac-thruster",
                 {
                     animation_speed = 0.5,
                     frame_count = 1,
@@ -68,7 +68,7 @@ data:extend({
                 }
             ),
             integration_patch_render_layer = "floor",
-            integration_patch = util.sprite_load("__realistic-rocketry__/graphics/entity/vac-thruster/thruster-bckg",
+            integration_patch = util.sprite_load("__realistic-rocketry__/graphics/entity/vac-thruster/vac-thruster-bckg",
                 {
                     scale = 0.45,
                     shift = {0,3}
@@ -78,7 +78,7 @@ data:extend({
             {
                 {
                     fadeout = true,
-                    animation = util.sprite_load("__realistic-rocketry__/graphics/entity/vac-thruster/thruster-light",
+                    animation = util.sprite_load("__realistic-rocketry__/graphics/entity/vac-thruster/vac-thruster-light",
                         {
                             animation_speed = 0.5,
                             frame_count = 1,
@@ -92,14 +92,14 @@ data:extend({
             },
             flame_effect =
             {
-                filename = "__realistic-rocketry__/graphics/entity/vac-thruster/thruster-flame.png",
-                width = 700,
-                height = 1517
+                filename = "__realistic-rocketry__/graphics/entity/vac-thruster/vac-thruster-flame.png",
+                width = 709,
+                height = 1537
             },
             flame_position = {0, 6.9},
             flame_half_height = 0,
             flame_effect_height = 1000 / 32,
-            flame_effect_width = 700 / 64,
+            flame_effect_width = 709 / 64,
             flame_effect_offset = 50 / 32,
         },
         damaged_trigger_effect = hit_effects.entity(),
@@ -248,11 +248,11 @@ data:extend({
             },
             flame_effect =
             {
-                filename = "__realistic-rocketry__/graphics/entity/vac-thruster/thruster-flame.png",
+                filename = "__realistic-rocketry__/graphics/entity/nuclear-thruster/nuclear-thruster-flame.png",
                 width = 550,
-                height = 1414
+                height = 1192
             },
-            flame_position = {0, 8.5},
+            flame_position = {0, 9.5},
             flame_half_height = 0,
             flame_effect_height = 1000 / 32,
             flame_effect_width = 550 / 64,

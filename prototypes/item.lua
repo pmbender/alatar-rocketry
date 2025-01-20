@@ -4,7 +4,7 @@ data:extend({
     {
         type = "item",
         name = "vac-thruster",
-        icon = "__realistic-rocketry__/graphics/icons/vac-thruster.png",
+        icon = "__alatar-rocketry__/graphics/icons/vac-thruster.png",
         subgroup = "space-platform",
         order = "f[vac-thruster]",
         inventory_move_sound = space_age_item_sounds.rocket_inventory_move,
@@ -17,7 +17,7 @@ data:extend({
     {
         type = "item",
         name = "nuclear-thruster",
-        icon = "__realistic-rocketry__/graphics/icons/nuclear-thruster.png",
+        icon = "__alatar-rocketry__/graphics/icons/nuclear-thruster.png",
         subgroup = "space-platform",
         order = "g[nuclear-thruster]",
         inventory_move_sound = space_age_item_sounds.rocket_inventory_move,

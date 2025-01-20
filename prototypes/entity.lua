@@ -6,7 +6,7 @@ data:extend({
         type = "thruster",
         name = "vac-thruster",
         flags = {"placeable-neutral", "placeable-player", "player-creation"},
-        icon = "__realistic-rocketry__/graphics/icons/vac-thruster.png",
+        icon = "__alatar-rocketry__/graphics/icons/vac-thruster.png",
         collision_box = {{-4.7, -5}, {4.7, 0}},
         collision_mask = {layers={item=true, object=true, train=true, is_lower_object = true, is_object = true}},
         selection_box = {{-5, -5.5}, {5, 9}},
@@ -59,7 +59,7 @@ data:extend({
         },
         graphics_set =
         {
-            animation = util.sprite_load("__realistic-rocketry__/graphics/entity/vac-thruster/vac-thruster",
+            animation = util.sprite_load("__alatar-rocketry__/graphics/entity/vac-thruster/vac-thruster",
                 {
                     animation_speed = 0.5,
                     frame_count = 1,
@@ -68,7 +68,7 @@ data:extend({
                 }
             ),
             integration_patch_render_layer = "floor",
-            integration_patch = util.sprite_load("__realistic-rocketry__/graphics/entity/vac-thruster/vac-thruster-bckg",
+            integration_patch = util.sprite_load("__alatar-rocketry__/graphics/entity/vac-thruster/vac-thruster-bckg",
                 {
                     scale = 0.45,
                     shift = {0,3}
@@ -78,7 +78,7 @@ data:extend({
             {
                 {
                     fadeout = true,
-                    animation = util.sprite_load("__realistic-rocketry__/graphics/entity/vac-thruster/vac-thruster-light",
+                    animation = util.sprite_load("__alatar-rocketry__/graphics/entity/vac-thruster/vac-thruster-light",
                         {
                             animation_speed = 0.5,
                             frame_count = 1,
@@ -92,7 +92,7 @@ data:extend({
             },
             flame_effect =
             {
-                filename = "__realistic-rocketry__/graphics/entity/vac-thruster/vac-thruster-flame.png",
+                filename = "__alatar-rocketry__/graphics/entity/vac-thruster/vac-thruster-flame.png",
                 width = 709,
                 height = 1537
             },
@@ -162,7 +162,7 @@ data:extend({
         type = "thruster",
         name = "nuclear-thruster",
         flags = {"placeable-neutral", "placeable-player", "player-creation"},
-        icon = "__realistic-rocketry__/graphics/icons/nuclear-thruster.png",
+        icon = "__alatar-rocketry__/graphics/icons/nuclear-thruster.png",
         collision_box = {{-4.7, -7}, {4.7, 1}},
         collision_mask = {layers={item=true, object=true, train=true, is_lower_object = true, is_object = true}},
         selection_box = {{-5, -7.5}, {5, 9.5}},
@@ -215,7 +215,7 @@ data:extend({
         },
         graphics_set =
         {
-            animation = util.sprite_load("__realistic-rocketry__/graphics/entity/nuclear-thruster/nuclear-thruster",
+            animation = util.sprite_load("__alatar-rocketry__/graphics/entity/nuclear-thruster/nuclear-thruster",
                 {
                     animation_speed = 0.5,
                     frame_count = 1,
@@ -224,7 +224,7 @@ data:extend({
                 }
             ),
             integration_patch_render_layer = "floor",
-            integration_patch = util.sprite_load("__realistic-rocketry__/graphics/entity/nuclear-thruster/nuclear-thruster-bckg",
+            integration_patch = util.sprite_load("__alatar-rocketry__/graphics/entity/nuclear-thruster/nuclear-thruster-bckg",
                 {
                     scale = 0.45,
                     shift = {0,3}
@@ -234,7 +234,7 @@ data:extend({
             {
                 {
                     fadeout = true,
-                    animation = util.sprite_load("__realistic-rocketry__/graphics/entity/nuclear-thruster/nuclear-thruster-light",
+                    animation = util.sprite_load("__alatar-rocketry__/graphics/entity/nuclear-thruster/nuclear-thruster-light",
                         {
                             animation_speed = 0.5,
                             frame_count = 1,
@@ -248,7 +248,7 @@ data:extend({
             },
             flame_effect =
             {
-                filename = "__realistic-rocketry__/graphics/entity/nuclear-thruster/nuclear-thruster-flame.png",
+                filename = "__alatar-rocketry__/graphics/entity/nuclear-thruster/nuclear-thruster-flame.png",
                 width = 550,
                 height = 1192
             },

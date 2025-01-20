@@ -33,6 +33,11 @@ data.raw.recipe["thruster-fuel"].surface_conditions =
     {property = "gravity", min = 0, max = 1000}
 }
 
+-------------------------------------------------------------------------- Technology Modifications
+
+data.raw["technology"]["space-platform-thruster"].icon = "__alatar-rocketry__/graphics/technology/space-platform-thruster.png"
+data.raw["technology"]["rocket-fuel"].icon = "__alatar-rocketry__/graphics/technology/rocket-fuel.png"
+
 -------------------------------------------------------------------------- Rocket Silo Modifications
 
 data.raw["rocket-silo"]["rocket-silo"].fluid_boxes =
@@ -56,9 +61,9 @@ data.raw["rocket-silo"]["rocket-silo"].fluid_boxes =
 }
 
 -------------------------------------------------------------------------- Thruster Modifications
-data.raw.item["thruster"].icon = "__realistic-rocketry__/graphics/icons/sl-thruster.png"
+data.raw.item["thruster"].icon = "__alatar-rocketry__/graphics/icons/sl-thruster.png"
 
-data.raw["thruster"]["thruster"].icon = "__realistic-rocketry__/graphics/icons/sl-thruster.png"
+data.raw["thruster"]["thruster"].icon = "__alatar-rocketry__/graphics/icons/sl-thruster.png"
 data.raw["thruster"]["thruster"].collision_box = {{-2.5, -2.2}, {2.5, 2.2}}
 data.raw["thruster"]["thruster"].selection_box = {{-3, -2.5}, {3, 6}}
 data.raw["thruster"]["thruster"].plumes = nil
@@ -93,7 +98,7 @@ data.raw["thruster"]["thruster"].oxidizer_fluid_box =
 
 data.raw["thruster"]["thruster"].graphics_set =
 {
-    animation = util.sprite_load("__realistic-rocketry__/graphics/entity/sl-thruster/thruster",
+    animation = util.sprite_load("__alatar-rocketry__/graphics/entity/sl-thruster/thruster",
         {
             animation_speed = 0.5,
             frame_count = 1,
@@ -102,7 +107,7 @@ data.raw["thruster"]["thruster"].graphics_set =
         }
     ),
     integration_patch_render_layer = "floor",
-    integration_patch = util.sprite_load("__realistic-rocketry__/graphics/entity/sl-thruster/thruster-bckg",
+    integration_patch = util.sprite_load("__alatar-rocketry__/graphics/entity/sl-thruster/thruster-bckg",
         {
             scale = 0.4,
             shift = {0,3}
@@ -112,7 +117,7 @@ data.raw["thruster"]["thruster"].graphics_set =
     {
         {
             fadeout = true,
-            animation = util.sprite_load("__realistic-rocketry__/graphics/entity/sl-thruster/thruster-light",
+            animation = util.sprite_load("__alatar-rocketry__/graphics/entity/sl-thruster/thruster-light",
                 {
                     animation_speed = 0.5,
                     frame_count = 1,
@@ -126,7 +131,7 @@ data.raw["thruster"]["thruster"].graphics_set =
     },
     flame_effect =
     {
-        filename = "__realistic-rocketry__/graphics/entity/sl-thruster/thruster-flame.png",
+        filename = "__alatar-rocketry__/graphics/entity/sl-thruster/thruster-flame.png",
         width = 445,
         height = 964
     },

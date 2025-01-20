@@ -54,8 +54,81 @@ data.raw.recipe["thruster-fuel"].surface_conditions =
 
 -------------------------------------------------------------------------- Technology Modifications
 
-data.raw["technology"]["space-platform-thruster"].icon = "__alatar-rocketry__/graphics/technology/space-platform-thruster.png"
-data.raw["technology"]["rocket-fuel"].icon = "__alatar-rocketry__/graphics/technology/rocket-fuel.png"
+data.raw.technology["rocket-silo"].prerequisites =
+{
+	"concrete",
+	"rocket-fuel",
+	"space-platform-thruster",
+	"logistic-robotics",
+	"low-density-structure",
+	"advanced-material-processing-2"
+}
+
+data.raw.technology["space-platform"].effects =
+{
+	{
+		type = "unlock-recipe",
+		recipe = "asteroid-collector"
+	},
+	{
+		type = "unlock-recipe",
+		recipe = "crusher"
+	},
+	{
+		type = "unlock-recipe",
+		recipe = "metallic-asteroid-crushing"
+	},
+	{
+		type = "unlock-recipe",
+		recipe = "carbonic-asteroid-crushing"
+	},
+	{
+		type = "unlock-recipe",
+		recipe = "oxide-asteroid-crushing"
+	},
+	{
+		type = "unlock-recipe",
+		recipe = "cargo-bay"
+	},
+	{
+		type = "unlock-recipe",
+		recipe = "ice-melting"
+	},
+},
+
+data.raw.technology["space-platform-thruster"].icon = "__alatar-rocketry__/graphics/technology/space-platform-thruster.png"
+data.raw.technology["space-platform-thruster"].prerequisites = {"processing-unit"}
+data.raw.technology["space-platform-thruster"].effects =
+{
+	{
+		type = "unlock-recipe",
+		recipe = "thruster"
+	},
+}
+data.raw.technology["space-platform-thruster"].unit =
+{
+  count = 500,
+  ingredients =
+  {
+	{"automation-science-pack", 1},
+	{"logistic-science-pack", 1},
+	{"chemical-science-pack", 1},
+  },
+  time = 60
+}
+
+data.raw.technology["rocket-fuel"].icon = "__alatar-rocketry__/graphics/technology/rocket-fuel.png"
+data.raw.technology["rocket-fuel"].effects =
+{
+	{
+		type = "unlock-recipe",
+		recipe = "thruster-fuel"
+	},
+	{
+		type = "unlock-recipe",
+		recipe = "thruster-oxidizer"
+	},
+}
 
 -------------------------------------------------------------------------- Rocket Silo Modifications
 

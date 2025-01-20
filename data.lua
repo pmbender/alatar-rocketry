@@ -94,7 +94,7 @@ data.raw.technology["space-platform"].effects =
 		type = "unlock-recipe",
 		recipe = "ice-melting"
 	},
-},
+}
 
 data.raw.technology["space-platform-thruster"].icon = "__alatar-rocketry__/graphics/technology/space-platform-thruster.png"
 data.raw.technology["space-platform-thruster"].prerequisites = {"processing-unit"}
@@ -128,6 +128,31 @@ data.raw.technology["rocket-fuel"].effects =
 		type = "unlock-recipe",
 		recipe = "thruster-oxidizer"
 	},
+}
+
+data.raw.technology["rocket-fuel-productivity"].icons = util.technology_icon_constant_recipe_productivity("__alatar-rocketry__/graphics/technology/rocket-fuel-productivity.png")
+data.raw.technology["rocket-fuel-productivity"].effects =
+{
+    {
+        type = "change-recipe-productivity",
+        recipe = "thruster-fuel",
+        change = 0.1
+    },
+	{
+        type = "change-recipe-productivity",
+        recipe = "thruster-oxidizer",
+        change = 0.1
+    },
+    {
+        type = "change-recipe-productivity",
+        recipe = "rocket-fuel-from-jelly",
+        change = 0.1
+    },
+    {
+        type = "change-recipe-productivity",
+        recipe = "ammonia-rocket-fuel",
+        change = 0.1
+    }
 }
 
 -------------------------------------------------------------------------- Rocket Silo Modifications

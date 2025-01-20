@@ -23,6 +23,25 @@ data.raw.recipe["rocket-part"].ingredients =
     {type = "fluid", name = "thruster-fuel", amount = 100}
 }
 
+data.raw.recipe["nuclear-fuel"].category = "crafting-with-fluid"
+data.raw.recipe["nuclear-fuel"].ingredients =
+{
+    {type = "item", name = "uranium-235", amount = 1},
+	{type = "fluid", name = "light-oil", amount = 20}
+}
+
+data.raw.recipe["ammonia-rocket-fuel"].icon = "__alatar-rocketry__/graphics/icons/ammonia-rocket-fuel.png"
+data.raw.recipe["ammonia-rocket-fuel"].results = 
+{
+	{type="fluid", name="thruster-fuel", amount=75}
+}
+
+data.raw.recipe["rocket-fuel-from-jelly"].icon = "__alatar-rocketry__/graphics/icons/rocket-fuel-from-jelly.png"
+data.raw.recipe["rocket-fuel-from-jelly"].results = 
+{
+	{type="fluid", name="thruster-fuel", amount=75}
+}
+
 data.raw.recipe["thruster-oxidizer"].surface_conditions = 
 {
     {property = "gravity", min = 0, max = 1000}

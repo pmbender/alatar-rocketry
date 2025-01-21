@@ -3,9 +3,10 @@
 --"Blue Origin BE-4" (https://skfb.ly/6X9H9) by MartianDays is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 --"Merlin 1D Vacuum" (https://skfb.ly/6RBww) by MartianDays is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
 
-require("prototypes.recipe")
-require("prototypes.entity")
 require("prototypes.item")
+require("prototypes.entity")
+require("prototypes.recipe")
+require("prototypes.technology")
 
 -------------------------------------------------------------------------- Misc Prototype Modifications
 

@@ -2,7 +2,7 @@ data:extend({
     {
         type = "recipe",
         name = "vac-thruster",
-        enabled = true,
+        enabled = false,
         ingredients =
         {
             {type = "item", name = "steel-plate", amount = 20},
@@ -16,7 +16,7 @@ data:extend({
     {
         type = "recipe",
         name = "nuclear-thruster",
-        enabled = true,
+        enabled = false,
         ingredients =
         {
             {type = "item", name = "steel-plate", amount = 20},

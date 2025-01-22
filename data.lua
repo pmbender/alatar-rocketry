@@ -12,6 +12,9 @@ require("prototypes.technology")
 
 data.raw["fluid"]["thruster-fuel"].auto_barrel = true
 data.raw["fluid"]["thruster-oxidizer"].auto_barrel = true
+data.raw["fluid"]["ammonia"].auto_barrel = true
+data.raw.item["rocket-fuel"].icon = "__alatar-rocketry__/graphics/icons/ammonia-fuel.png"
+data.raw.item["rocket-fuel"].order = "b[chemistry]-a[ammonia-fuel]"
 
 -------------------------------------------------------------------------- Recipe Modifications
 
@@ -43,14 +46,63 @@ data.raw.recipe["rocket-fuel-from-jelly"].results =
 	{type="fluid", name="thruster-fuel", amount=75}
 }
 
-data.raw.recipe["thruster-oxidizer"].surface_conditions = 
+data.raw.recipe["thruster-oxidizer"].icon = "__alatar-rocketry__/graphics/icons/thruster-oxidizer.png"
+data.raw.recipe["thruster-oxidizer"].surface_conditions =
 {
-    {property = "gravity", min = 0, max = 1000}
+	{property = "gravity", min = 0, max = 100},
+	{property = "pressure", min = 300, max = 4000}
+}
+data.raw.recipe["thruster-oxidizer"].ingredients =
+{
+    {type = "fluid", name = "water", amount = 75}
+}
+data.raw.recipe["thruster-oxidizer"].results = 
+{
+	{type = "fluid", name = "thruster-oxidizer", amount = 75},
+	{type = "fluid", name = "ammonia", amount = 20}
 }
 
-data.raw.recipe["thruster-fuel"].surface_conditions = 
+data.raw.recipe["advanced-thruster-oxidizer"].category = "cryogenics"
+data.raw.recipe["advanced-thruster-oxidizer"].energy_required = 60
+data.raw.recipe["advanced-thruster-oxidizer"].icon = "__alatar-rocketry__/graphics/icons/advanced-thruster-oxidizer.png"
+data.raw.recipe["advanced-thruster-oxidizer"].results = {{type = "fluid", name = "thruster-oxidizer", amount = 150}}
+data.raw.recipe["advanced-thruster-oxidizer"].ingredients = nil
+data.raw.recipe["advanced-thruster-oxidizer"].surface_conditions =
 {
-    {property = "gravity", min = 0, max = 1000}
+	{property = "gravity", min = 0, max = 100},
+	{property = "pressure", min = 300, max = 4000}
+}
+
+data.raw.recipe["thruster-fuel"].category = "oil-processing"
+data.raw.recipe["thruster-fuel"].surface_conditions = {{property = "gravity", min = 0, max = 100}}
+data.raw.recipe["thruster-fuel"].ingredients =
+{
+    {type = "fluid", name = "light-oil", amount = 50},
+    {type = "fluid", name = "steam", amount = 25}
+}
+
+data.raw.recipe["advanced-thruster-fuel"].icon = "__alatar-rocketry__/graphics/icons/advanced-thruster-fuel.png"
+data.raw.recipe["advanced-thruster-fuel"].surface_conditions = {{property = "gravity", min = 0, max = 100}}
+data.raw.recipe["advanced-thruster-fuel"].results = {{type = "fluid", name = "thruster-fuel", amount = 150}}
+data.raw.recipe["advanced-thruster-fuel"].ingredients =
+{
+    {type = "item", name = "solid-fuel", amount = 2},
+    {type = "item", name = "calcite", amount = 1},
+    {type = "fluid", name = "steam", amount = 25}
+}
+
+data.raw.recipe["rocket-fuel"].ingredients =
+{
+    {type = "item", name = "solid-fuel", amount = 10},
+    {type = "fluid", name = "ammonia", amount = 20}
+}
+	
+data.raw.recipe["rocket-fuel"].crafting_machine_tint =
+{
+    primary = {r = 0.596, g = 0.764, b = 0.780, a = 1.000},
+    secondary = {r = 0.551, g = 0.762, b = 0.844, a = 1.000},
+    tertiary = {r = 0.596, g = 0.773, b = 0.895, a = 1.000},
+    quaternary = {r = 0.290, g = 0.734, b = 1, a = 1.000},
 }
 
 -------------------------------------------------------------------------- Technology Modifications
@@ -129,6 +181,10 @@ data.raw.technology["rocket-fuel"].effects =
 		type = "unlock-recipe",
 		recipe = "thruster-oxidizer"
 	},
+	{
+        type = "unlock-recipe",
+        recipe = "rocket-fuel"
+    }
 }
 
 data.raw.technology["rocket-fuel-productivity"].icons = util.technology_icon_constant_recipe_productivity("__alatar-rocketry__/graphics/technology/rocket-fuel-productivity.png")
@@ -141,7 +197,17 @@ data.raw.technology["rocket-fuel-productivity"].effects =
     },
 	{
         type = "change-recipe-productivity",
+        recipe = "advanced-thruster-fuel",
+        change = 0.1
+    },
+	{
+        type = "change-recipe-productivity",
         recipe = "thruster-oxidizer",
+        change = 0.1
+    },
+	{
+        type = "change-recipe-productivity",
+        recipe = "advanced-thruster-oxidizer",
         change = 0.1
     },
     {
@@ -153,6 +219,18 @@ data.raw.technology["rocket-fuel-productivity"].effects =
         type = "change-recipe-productivity",
         recipe = "ammonia-rocket-fuel",
         change = 0.1
+    }
+}
+
+data.raw.technology["plastics"].effects =
+{
+    {
+        type = "unlock-recipe",
+        recipe = "plastic-bar"
+    },
+	{
+        type = "unlock-recipe",
+        recipe = "plastic-bar-from-ammonia"
     }
 }
 

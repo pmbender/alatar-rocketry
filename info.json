@@ -4,6 +4,6 @@
     "title": "Alatar's Rocketry",
     "author": "AlatarIstarion",
     "factorio_version": "2.0",
-    "dependencies": ["base >= 2.0", "space-age"],
+    "dependencies": ["base >= 2.0", "space-age", "PlanetsLib >= 1.1.33"],
     "description": "This mod makes rockets behave in a more realistic way."
 }

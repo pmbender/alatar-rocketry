@@ -7,6 +7,7 @@ require("prototypes.item")
 require("prototypes.entity")
 require("prototypes.recipe")
 require("prototypes.technology")
+require("prototypes.space")
 local asteroid_util = require("__space-age__.prototypes.planet.asteroid-spawn-definitions")
 
 -------------------------------------------------------------------------- Misc Prototype Modifications
@@ -66,7 +67,7 @@ data.raw.recipe["thruster-oxidizer"].results =
 data.raw.recipe["advanced-thruster-oxidizer"].category = "cryogenics"
 data.raw.recipe["advanced-thruster-oxidizer"].energy_required = 60
 data.raw.recipe["advanced-thruster-oxidizer"].icon = "__alatar-rocketry__/graphics/icons/advanced-thruster-oxidizer.png"
-data.raw.recipe["advanced-thruster-oxidizer"].results = {{type = "fluid", name = "thruster-oxidizer", amount = 150}}
+data.raw.recipe["advanced-thruster-oxidizer"].results = {{type = "fluid", name = "thruster-oxidizer", amount = 250}}
 data.raw.recipe["advanced-thruster-oxidizer"].ingredients = nil
 data.raw.recipe["advanced-thruster-oxidizer"].surface_conditions =
 {
@@ -338,38 +339,3 @@ data.raw["thruster"]["thruster"].graphics_set =
     flame_effect_width = 445 / 64,
     flame_effect_offset = 50 / 32,
 }
-
--------------------------------------------------------------------------- Planet Modifications
-
--- Set gravity-pull of all planets to their surface gravity
-data.raw.planet["vulcanus"].gravity_pull = 40
-data.raw.planet["gleba"].gravity_pull = 20
-data.raw.planet["fulgora"].gravity_pull = 8
-data.raw.planet["aquilo"].gravity_pull = 15
-
--- Remove planet-influenced asteroid spawn from space connections
-data.raw.planet["nauvis"].asteroid_spawn_influence = 0
-data.raw.planet["vulcanus"].asteroid_spawn_influence = 0
-data.raw.planet["gleba"].asteroid_spawn_influence = 0
-data.raw.planet["fulgora"].asteroid_spawn_influence = 0
-data.raw.planet["aquilo"].asteroid_spawn_influence = 0
-
-data.raw.planet["nauvis"].asteroid_spawn_definitions = nil
-data.raw.planet["vulcanus"].aasteroid_spawn_definitions = nil
-data.raw.planet["gleba"].asteroid_spawn_definitions = nil
-data.raw.planet["fulgora"].asteroid_spawn_definitions = nil
-data.raw.planet["aquilo"].asteroid_spawn_definitions = nil
-
-data.raw["space-connection"]["nauvis-vulcanus"].asteroid_spawn_definitions = nil
-data.raw["space-connection"]["nauvis-gleba"].asteroid_spawn_definitions = nil
-data.raw["space-connection"]["nauvis-fulgora"].asteroid_spawn_definitions = nil
-data.raw["space-connection"]["vulcanus-gleba"].asteroid_spawn_definitions = nil
-data.raw["space-connection"]["gleba-fulgora"].asteroid_spawn_definitions = nil
-data.raw["space-connection"]["gleba-aquilo"].asteroid_spawn_definitions = nil
-data.raw["space-connection"]["fulgora-aquilo"].asteroid_spawn_definitions = nil
-
--- Set distance between Nauvis & other locations to 2.73 * approximate delta-v from low Nauvis orbit:
---Vulcanus (4) = 1000+4500 = 5500*2.73 = 15000
---Gleba (2) = 1500+4000 = 5500*2.73 = 15000
---Fulgora (0.8) = 3500+2800 = 6300*2.73 = 17200
---Aquilo (1.5) = 4500+3500 = 8000*2.73 = 21840

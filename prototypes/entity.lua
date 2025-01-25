@@ -163,13 +163,13 @@ data:extend({
         name = "nuclear-thruster",
         flags = {"placeable-neutral", "placeable-player", "player-creation"},
         icon = "__alatar-rocketry__/graphics/icons/nuclear-thruster.png",
-        collision_box = {{-4.7, -7}, {4.7, 1}},
-        collision_mask = {layers={item=true, object=true, train=true, is_lower_object = true, is_object = true}},
-        selection_box = {{-5, -7.5}, {5, 9.5}},
+		collision_mask = {layers={item=true, object=true, train=true, is_lower_object = true, is_object = true}},
+		collision_box = {{-3.9, -7}, {3.9, 0}},
+        selection_box = {{-4, -7.5}, {4, 10}},
         tile_buildability_rules =
         {
-            {area = {{-4.8, -7.35}, {4.8, 1.1}}, required_tiles = {layers={ground_tile=true}}, colliding_tiles = {layers={empty_space=true}}, remove_on_collision = true},
-            {area = {{-4.8, 2}, {4.8, 90.3}}, required_tiles = {layers={empty_space=true}}, remove_on_collision = true},
+            {area = {{-3.9, -5.35}, {3.9, 0.1}}, required_tiles = {layers={ground_tile=true}}, colliding_tiles = {layers={empty_space=true}}, remove_on_collision = true},
+            {area = {{-3.9, 1}, {3.9, 90.3}}, required_tiles = {layers={empty_space=true}}, remove_on_collision = true},
         },
         max_health = 300,
         minable = {mining_time = 0.1, result = "nuclear-thruster"},
@@ -192,7 +192,7 @@ data:extend({
             volume = 500,
             pipe_connections =
             {
-                {flow_direction = "input", direction = 0, position = { 1.5, -7}},
+                {flow_direction = "input", direction = defines.direction.north, position = { 1.5, -7}},
             }
         },
         oxidizer_fluid_box =

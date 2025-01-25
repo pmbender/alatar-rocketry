@@ -59,7 +59,7 @@ data.raw["space-connection"]["nauvis-fulgora"].to = "fulgora-intercept"
 
 -- Make misc updates to the rendering of existing space locations
 data.raw.planet["vulcanus"].label_orientation = 0.45
-data.raw.planet["shattered-planet"].label_orientation = 0.2
+data.raw["space-location"]["shattered-planet"].label_orientation = 0.2
 data.raw["space-location"]["solar-system-edge"].draw_orbit = false
 
 -- Set distance between Nauvis & other locations to 2.73 * approximate delta-v from low Nauvis orbit:

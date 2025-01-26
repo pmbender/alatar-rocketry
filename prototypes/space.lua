@@ -1,9 +1,3 @@
--- Set distance between Nauvis & other locations to 2.73 * approximate delta-v from low Nauvis orbit:
---Vulcanus (4) = 1000+4500 = 5500*2.73 = 15000
---Gleba (2) = 1500+4000 = 5500*2.73 = 15000
---Fulgora (0.8) = 3500+2800 = 6300*2.73 = 17200
---Aquilo (1.5) = 4500+3500 = 8000*2.73 = 21840
-
 -------------------------------------------------------------------------- Planet Modifications
 
 -- Set gravity-pull of all planets to their surface gravity
@@ -69,6 +63,8 @@ data.raw["space-location"]["solar-system-edge"].draw_orbit = false
 --Aquilo (1.5) = 4500+3500 = 8000*2.73 = 21840
 
 data.raw["space-connection"]["nauvis-fulgora"].length = 17200
+
+-------------------------------------------------------------------------- Update Existing Space Locations using PlanetsLib
 
 PlanetsLib:update(
 {
@@ -165,21 +161,21 @@ PlanetsLib:update(
 	},
 })
 
+-------------------------------------------------------------------------- Add new space locations
+
 PlanetsLib:extend(
 {
 	{
 		type = "space-location",
 		name = "nauvis-intercept",
 		icon = "__alatar-rocketry__/graphics/icons/aquilo-transfer-point.png",
---		starmap_icon = "__alatar-rocketry__/graphics/icons/starmap-transfer-point.png",
-		starmap_icon_size = 1,
 		order = "a[nauvis]",
-	    subgroup = "planets",
+	    subgroup = "transfer-point",
 		gravity_pull = 0,
-		magnitude = 1,
+		magnitude = 0.5,
 		draw_orbit = false,
 		fly_condition = false,
-		label_orientation = 0.45,
+		label_orientation = 0.49,
 		orbit = 
 		{
 			parent = {
@@ -194,12 +190,10 @@ PlanetsLib:extend(
 		type = "space-location",
 		name = "gleba-intercept",
 		icon = "__alatar-rocketry__/graphics/icons/aquilo-transfer-point.png",
---		starmap_icon = "__alatar-rocketry__/graphics/icons/starmap-transfer-point.png",
-		starmap_icon_size = 1,
 		order = "a[nauvis]",
-	    subgroup = "planets",
+	    subgroup = "transfer-point",
 		gravity_pull = 0,
-		magnitude = 1,
+		magnitude = 0.5,
 		draw_orbit = false,
 		fly_condition = false,
 		label_orientation = 0.25,
@@ -217,12 +211,10 @@ PlanetsLib:extend(
 		type = "space-location",
 		name = "vulcanus-intercept",
 		icon = "__alatar-rocketry__/graphics/icons/aquilo-transfer-point.png",
---		starmap_icon = "__alatar-rocketry__/graphics/icons/starmap-transfer-point.png",
-		starmap_icon_size = 1,
 		order = "a[nauvis]",
-	    subgroup = "planets",
+	    subgroup = "transfer-point",
 		gravity_pull = 0,
-		magnitude = 1,
+		magnitude = 0.5,
 		draw_orbit = false,
 		fly_condition = false,
 		label_orientation = 0.2,
@@ -240,12 +232,10 @@ PlanetsLib:extend(
 		type = "space-location",
 		name = "fulgora-intercept",
 		icon = "__alatar-rocketry__/graphics/icons/aquilo-transfer-point.png",
---		starmap_icon = "__alatar-rocketry__/graphics/icons/starmap-transfer-point.png",
-		starmap_icon_size = 1,
 		order = "a[nauvis]",
-	    subgroup = "planets",
+	    subgroup = "transfer-point",
 		gravity_pull = 0,
-		magnitude = 1,
+		magnitude = 0.5,
 		draw_orbit = false,
 		fly_condition = false,
 		label_orientation = 0.75,
@@ -263,12 +253,10 @@ PlanetsLib:extend(
 		type = "space-location",
 		name = "aquilo-intercept",
 		icon = "__alatar-rocketry__/graphics/icons/aquilo-transfer-point.png",
---		starmap_icon = "__alatar-rocketry__/graphics/icons/starmap-transfer-point.png",
-		starmap_icon_size = 1,
 		order = "a[nauvis]",
-	    subgroup = "planets",
+	    subgroup = "transfer-point",
 		gravity_pull = 0,
-		magnitude = 1,
+		magnitude = 0.5,
 		draw_orbit = false,
 		fly_condition = false,
 		label_orientation = 0.40,
@@ -326,12 +314,10 @@ PlanetsLib:extend(
 		type = "space-location",
 		name = "carbolithic-belt-intercept",
 		icon = "__alatar-rocketry__/graphics/icons/aquilo-transfer-point.png",
---		starmap_icon = "__alatar-rocketry__/graphics/icons/starmap-transfer-point.png",
-		starmap_icon_size = 1,
 		order = "a[nauvis]",
-	    subgroup = "planets",
+	    subgroup = "transfer-point",
 		gravity_pull = 0,
-		magnitude = 1,
+		magnitude = 0.5,
 		draw_orbit = false,
 		fly_condition = false,
 		orbit = 
@@ -368,8 +354,16 @@ PlanetsLib:extend(
 	},
 })
 
+-------------------------------------------------------------------------- Add new space connections
+
 data:extend(
 {
+	  {
+    type = "item-subgroup",
+    name = "transfer-point",
+    group = "space",
+    order = "jj"
+  },
 	{
 		type = "space-connection",
 		name = "nauvis-low-to-intercept",

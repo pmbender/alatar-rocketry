@@ -174,6 +174,7 @@ data.raw.technology["planet-discovery-fulgora"].effects =
     }
 }
 
+data.raw.technology["planet-discovery-aquilo"].count = 1000
 data.raw.technology["planet-discovery-aquilo"].effects =
 {
     {
@@ -187,6 +188,10 @@ data.raw.technology["planet-discovery-aquilo"].effects =
         use_icon_overlay_constant = true
     }
 }
+
+
+data.raw.technology["lithium-processing"].prerequisites = {"advanced-ammonia-processing"}
+
 
 -------------------------------------------------------------------------- New Technology
 
@@ -346,6 +351,50 @@ data:extend(
 				type = "unlock-space-location",
 				space_location = "aquilite-cluster",
 				use_icon_overlay_constant = true
+			}
+		},
+		prerequisites = {"planet-discovery-aquilo"},
+		unit =
+		{
+			count = 3000,
+			ingredients =
+			{
+				{"automation-science-pack", 1},
+				{"logistic-science-pack", 1},
+				{"chemical-science-pack", 1},
+				{"production-science-pack", 1},
+				{"utility-science-pack", 1},
+				{"space-science-pack", 1},
+				{"metallurgic-science-pack", 1},
+				{"agricultural-science-pack", 1},
+				{"electromagnetic-science-pack", 1}
+			},
+			time = 60
+		}
+	},
+	{
+		type = "technology",
+		name = "advanced-ammonia-processing",
+		icon = "__alatar-rocketry__/graphics/technology/advanced-ammonia-processing.png",
+		icon_size = 256,
+		essential = true,
+		effects =
+		{
+			{
+				type = "unlock-recipe",
+				recipe = "ammoniacal-solution-separation",
+			},
+			{
+				type = "unlock-recipe",
+				recipe = "solid-fuel-from-ammonia"
+			},
+			{
+				type = "unlock-recipe",
+				recipe = "ammonia-rocket-fuel"
+			},
+			{
+				type = "unlock-recipe",
+				recipe = "ice-platform",
 			}
 		},
 		prerequisites = {"planet-discovery-aquilo"},

@@ -285,15 +285,13 @@ PlanetsLib:extend(
 	{
 		type = "space-location",
 		name = "ferrarius-belt",
-		icon = "__alatar-rocketry__/graphics/icons/aquilo-transfer-point.png",
---		starmap_icon = "__alatar-rocketry__/graphics/icons/starmap-transfer-point.png",
-		starmap_icon_size = 1,
+		icon = "__alatar-rocketry__/graphics/icons/ferrarius-belt.png",
+		starmap_icon = "__alatar-rocketry__/graphics/icons/starmap-location-ferrarius-belt.png",
+		starmap_icon_size = 512,
 		order = "a[nauvis]",
 	    subgroup = "planets",
 		gravity_pull = 0,
 		magnitude = 1,
-		fly_condition = false,
---		label_orientation = 0.45,
 		orbit = 
 		{
 			parent = {
@@ -307,15 +305,13 @@ PlanetsLib:extend(
 	{
 		type = "space-location",
 		name = "carbolithic-belt",
-		icon = "__alatar-rocketry__/graphics/icons/aquilo-transfer-point.png",
---		starmap_icon = "__alatar-rocketry__/graphics/icons/starmap-transfer-point.png",
-		starmap_icon_size = 1,
+		icon = "__alatar-rocketry__/graphics/icons/carbolithic-belt.png",
+		starmap_icon = "__alatar-rocketry__/graphics/icons/starmap-location-carbolithic-belt.png",
+		starmap_icon_size = 512,
 		order = "a[nauvis]",
 	    subgroup = "planets",
 		gravity_pull = 0,
 		magnitude = 1,
-		fly_condition = false,
---		label_orientation = 0.45,
 		orbit = 
 		{
 			parent = {
@@ -338,7 +334,6 @@ PlanetsLib:extend(
 		magnitude = 1,
 		draw_orbit = false,
 		fly_condition = false,
---		label_orientation = 0.45,
 		orbit = 
 		{
 			parent = {
@@ -352,15 +347,15 @@ PlanetsLib:extend(
 	{
 		type = "space-location",
 		name = "aquilite-cluster",
-		icon = "__alatar-rocketry__/graphics/icons/aquilo-transfer-point.png",
---		starmap_icon = "__alatar-rocketry__/graphics/icons/starmap-transfer-point.png",
-		starmap_icon_size = 1,
+		icon = "__alatar-rocketry__/graphics/icons/aquilite-cluster.png",
+		starmap_icon = "__alatar-rocketry__/graphics/icons/starmap-location-aquilite-cluster.png",
+		starmap_icon_size = 512,
 		order = "a[nauvis]",
 	    subgroup = "planets",
 		gravity_pull = 0,
 		magnitude = 1,
 		fly_condition = false,
---		label_orientation = 0.45,
+
 		orbit = 
 		{
 			parent = {

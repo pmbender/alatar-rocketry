@@ -1,11 +1,5 @@
 -------------------------------------------------------------------------- Planet Modifications
 
--- Set gravity-pull of all planets to their surface gravity
-data.raw.planet["vulcanus"].gravity_pull = 40
-data.raw.planet["gleba"].gravity_pull = 20
-data.raw.planet["fulgora"].gravity_pull = 8
-data.raw.planet["aquilo"].gravity_pull = 15
-
 -- Remove planet-influenced asteroid spawn from space connections
 data.raw.planet["nauvis"].asteroid_spawn_influence = 0
 data.raw.planet["vulcanus"].asteroid_spawn_influence = 0
@@ -20,7 +14,7 @@ data.raw.planet["gleba"].asteroid_spawn_definitions = nil
 data.raw.planet["fulgora"].asteroid_spawn_definitions = nil
 data.raw.planet["aquilo"].asteroid_spawn_definitions = nil
 
--- Remove asteroid spawn from space connections
+-- Remove asteroid spawn from inner solar system space connections
 data.raw["space-connection"]["nauvis-vulcanus"].asteroid_spawn_definitions = nil
 data.raw["space-connection"]["nauvis-gleba"].asteroid_spawn_definitions = nil
 data.raw["space-connection"]["nauvis-fulgora"].asteroid_spawn_definitions = nil
@@ -44,25 +38,15 @@ data.raw["space-connection"]["aquilo-solar-system-edge"].to = "aquilo"
 -- Update space connections to connect intercepts rather than low orbit
 data.raw["space-connection"]["nauvis-gleba"].from = "nauvis-intercept"
 data.raw["space-connection"]["nauvis-gleba"].to = "gleba-intercept"
+data.raw["space-connection"]["nauvis-gleba"].length = 1000
 
 data.raw["space-connection"]["vulcanus-gleba"].from = "gleba-intercept"
 data.raw["space-connection"]["vulcanus-gleba"].to = "vulcanus-intercept"
+data.raw["space-connection"]["vulcanus-gleba"].length = 700
 
 data.raw["space-connection"]["nauvis-fulgora"].from = "nauvis-intercept"
 data.raw["space-connection"]["nauvis-fulgora"].to = "fulgora-intercept"
-
--- Make misc updates to the rendering of existing space locations
-data.raw.planet["vulcanus"].label_orientation = 0.45
-data.raw["space-location"]["shattered-planet"].label_orientation = 0.2
-data.raw["space-location"]["solar-system-edge"].draw_orbit = false
-
--- Set distance between Nauvis & other locations to 2.73 * approximate delta-v from low Nauvis orbit:
---Vulcanus (4) = 1000+4500 = 5500*2.73 = 15000
---Gleba (2) = 1500+4000 = 5500*2.73 = 15000
---Fulgora (0.8) = 3500+2800 = 6300*2.73 = 17200
---Aquilo (1.5) = 4500+3500 = 8000*2.73 = 21840
-
-data.raw["space-connection"]["nauvis-fulgora"].length = 17200
+data.raw["space-connection"]["nauvis-fulgora"].length = 1700
 
 -------------------------------------------------------------------------- Update Existing Space Locations using PlanetsLib
 
@@ -71,6 +55,9 @@ PlanetsLib:update(
 	{
 		type = "planet",
 		name = "vulcanus",
+		label_orientation = 0.45,
+		solar_power_in_space = 833,
+		gravity_pull = 20,
 		orbit = 
 		{
 			parent = {
@@ -84,6 +71,8 @@ PlanetsLib:update(
 	{
 		type = "planet",
 		name = "gleba",
+		solar_power_in_space = 415,
+		gravity_pull = 15,
 		orbit = 
 		{
 			parent = {
@@ -110,6 +99,8 @@ PlanetsLib:update(
 	{
 		type = "planet",
 		name = "fulgora",
+		solar_power_in_space = 133,
+		gravity_pull = 8,
 		orbit = 
 		{
 			parent = {
@@ -123,6 +114,8 @@ PlanetsLib:update(
 	{
 		type = "planet",
 		name = "aquilo",
+		solar_power_in_space = 48,
+		gravity_pull = 6,
 		orbit = 
 		{
 			parent = {
@@ -130,12 +123,14 @@ PlanetsLib:update(
 				name = "star"
 			},
 			distance = 50,
-			orientation = 0.35
+			orientation = 0.35,
 		}
 	},
 	{
 		type = "space-location",
 		name = "solar-system-edge",
+		draw_orbit = false,
+		solar_power_in_space = 1,
 		orbit = 
 		{
 			parent = {
@@ -149,13 +144,15 @@ PlanetsLib:update(
 	{
 		type = "space-location",
 		name = "shattered-planet",
+		label_orientation = 0.2,
+		solar_power_in_space = 1,
 		orbit = 
 		{
 			parent = {
 				type = "space-location",
 				name = "star"
 			},
-			distance = 70,
+			distance = 75,
 			orientation = 0
 		}
 	},
@@ -176,6 +173,7 @@ PlanetsLib:extend(
 		draw_orbit = false,
 		fly_condition = false,
 		label_orientation = 0.49,
+		solar_power_in_space = 300,
 		orbit = 
 		{
 			parent = {
@@ -197,6 +195,7 @@ PlanetsLib:extend(
 		draw_orbit = false,
 		fly_condition = false,
 		label_orientation = 0.25,
+		solar_power_in_space = 415,
 		orbit = 
 		{
 			parent = {
@@ -218,6 +217,7 @@ PlanetsLib:extend(
 		draw_orbit = false,
 		fly_condition = false,
 		label_orientation = 0.2,
+		solar_power_in_space = 833,
 		orbit = 
 		{
 			parent = {
@@ -239,6 +239,7 @@ PlanetsLib:extend(
 		draw_orbit = false,
 		fly_condition = false,
 		label_orientation = 0.75,
+		solar_power_in_space = 133,
 		orbit = 
 		{
 			parent = {
@@ -260,6 +261,7 @@ PlanetsLib:extend(
 		draw_orbit = false,
 		fly_condition = false,
 		label_orientation = 0.40,
+		solar_power_in_space = 48,
 		orbit = 
 		{
 			parent = {
@@ -280,6 +282,7 @@ PlanetsLib:extend(
 	    subgroup = "planets",
 		gravity_pull = 0,
 		magnitude = 1,
+		solar_power_in_space = 1875,
 		orbit = 
 		{
 			parent = {
@@ -300,6 +303,7 @@ PlanetsLib:extend(
 	    subgroup = "planets",
 		gravity_pull = 0,
 		magnitude = 1,
+		solar_power_in_space = 83,
 		orbit = 
 		{
 			parent = {
@@ -320,6 +324,7 @@ PlanetsLib:extend(
 		magnitude = 0.5,
 		draw_orbit = false,
 		fly_condition = false,
+		solar_power_in_space = 83,
 		orbit = 
 		{
 			parent = {
@@ -341,7 +346,7 @@ PlanetsLib:extend(
 		gravity_pull = 0,
 		magnitude = 1,
 		fly_condition = false,
-
+		solar_power_in_space = 40,
 		orbit = 
 		{
 			parent = {
@@ -354,16 +359,16 @@ PlanetsLib:extend(
 	},
 })
 
--------------------------------------------------------------------------- Add new space connections
+-------------------------------------------------------------------------- Add new space connections etc.
 
 data:extend(
 {
-	  {
-    type = "item-subgroup",
-    name = "transfer-point",
-    group = "space",
-    order = "jj"
-  },
+	{
+		type = "item-subgroup",
+		name = "transfer-point",
+		group = "space",
+		order = "jj"
+	},
 	{
 		type = "space-connection",
 		name = "nauvis-low-to-intercept",
@@ -371,7 +376,7 @@ data:extend(
 		from = "nauvis",
 		to = "nauvis-intercept",
 		order = "d",
-		length = 1000,
+		length = 9900,
 	},
 	{
 		type = "space-connection",
@@ -380,7 +385,7 @@ data:extend(
 		from = "gleba",
 		to = "gleba-intercept",
 		order = "d",
-		length = 1000,
+		length = 14000,
 	},
 	{
 		type = "space-connection",
@@ -389,7 +394,7 @@ data:extend(
 		from = "vulcanus",
 		to = "vulcanus-intercept",
 		order = "d",
-		length = 1000,
+		length = 20000,
 	},
 	{
 		type = "space-connection",
@@ -398,7 +403,7 @@ data:extend(
 		from = "fulgora",
 		to = "fulgora-intercept",
 		order = "d",
-		length = 1000,
+		length = 8900,
 	},
 	{
 		type = "space-connection",
@@ -407,7 +412,7 @@ data:extend(
 		from = "aquilo",
 		to = "aquilo-intercept",
 		order = "d",
-		length = 1000,
+		length = 12000,
 	},
 	{
 		type = "space-connection",
@@ -416,7 +421,7 @@ data:extend(
 		from = "vulcanus-intercept",
 		to = "ferrarius-belt",
 		order = "d",
-		length = 1000,
+		length = 2100,
 	},
 	{
 		type = "space-connection",
@@ -425,7 +430,7 @@ data:extend(
 		from = "carbolithic-belt",
 		to = "carbolithic-belt-intercept",
 		order = "d",
-		length = 1000,
+		length = 3000,
 	},
 	{
 		type = "space-connection",
@@ -434,7 +439,7 @@ data:extend(
 		from = "fulgora-intercept",
 		to = "carbolithic-belt-intercept",
 		order = "d",
-		length = 1000,
+		length = 2200,
 	},
 	{
 		type = "space-connection",
@@ -443,7 +448,7 @@ data:extend(
 		from = "carbolithic-belt-intercept",
 		to = "aquilo-intercept",
 		order = "d",
-		length = 1000,
+		length = 2900,
 	},
 	{
 		type = "space-connection",
@@ -452,7 +457,7 @@ data:extend(
 		from = "aquilo-intercept",
 		to = "aquilite-cluster",
 		order = "d",
-		length = 1000,
+		length = 3200,
 	},
 	{
 		type = "space-connection",
@@ -461,6 +466,6 @@ data:extend(
 		from = "aquilite-cluster",
 		to = "solar-system-edge",
 		order = "d",
-		length = 1000,
+		length = 100000,
 	},
 })

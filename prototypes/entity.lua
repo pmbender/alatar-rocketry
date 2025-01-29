@@ -28,7 +28,7 @@ data:extend({
             }
         },
         min_performance = {fluid_volume = 0.1, fluid_usage = 0.1, effectivity = 1}, 
-        max_performance = {fluid_volume = 0.8, fluid_usage = 2, effectivity = 0.75},
+        max_performance = {fluid_volume = 0.8, fluid_usage = 1.75, effectivity = 0.75},
         fuel_fluid_box =
         {
             filter = "thruster-fuel",

@@ -241,7 +241,7 @@ data:extend({
                             blend_mode = "additive",
                             draw_as_glow = true,
                             scale = 0.45,
-                            shift = {0,8.1}
+                            shift = {0,7.7}
                         }
                     ),
                 },

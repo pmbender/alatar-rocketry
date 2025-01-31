@@ -511,11 +511,12 @@ data:extend(
 		type = "space-connection",
 		name = "carbolithic-belt-to-intercept",
 		subgroup = "planet-connections",
-		from = "carbolithic-belt",
-		to = "carbolithic-belt-intercept",
+		from = "carbolithic-belt-intercept",
+		to = "carbolithic-belt",
 		order = "d",
 		length = 3000,
-		icon = "__alatar-rocketry__/graphics/icons/transfer-point.png"
+		icon = "__alatar-rocketry__/graphics/icons/transfer-point.png",
+		asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.carbolithic_belt)
 	},
 	{
 		type = "space-connection",
@@ -545,7 +546,8 @@ data:extend(
 		to = "aquilite-cluster",
 		order = "d",
 		length = 3200,
-		icon = "__alatar-rocketry__/graphics/icons/transfer-point.png"
+		icon = "__alatar-rocketry__/graphics/icons/transfer-point.png",
+		asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.aquilo_aquilite)
 	},
 	{
 		type = "space-connection",

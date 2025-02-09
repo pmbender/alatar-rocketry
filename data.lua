@@ -18,95 +18,6 @@ data.raw["fluid"]["ammonia"].auto_barrel = true
 data.raw.item["rocket-fuel"].icon = "__alatar-rocketry__/graphics/icons/ammonia-fuel.png"
 data.raw.item["rocket-fuel"].order = "b[chemistry]-a[ammonia-fuel]"
 
--------------------------------------------------------------------------- Recipe Modifications
-
-data.raw.recipe["rocket-part"].ingredients =
-{
-    {type = "item", name = "processing-unit", amount = 1},
-    {type = "item", name = "low-density-structure", amount = 1},
-    {type = "item", name = "thruster", amount = 1},
-    {type = "fluid", name = "thruster-oxidizer", amount = 100},
-    {type = "fluid", name = "thruster-fuel", amount = 100}
-}
-
-data.raw.recipe["nuclear-fuel"].category = "crafting-with-fluid"
-data.raw.recipe["nuclear-fuel"].ingredients =
-{
-    {type = "item", name = "uranium-235", amount = 1},
-	{type = "fluid", name = "light-oil", amount = 20}
-}
-
-data.raw.recipe["ammonia-rocket-fuel"].icon = "__alatar-rocketry__/graphics/icons/ammonia-rocket-fuel.png"
-data.raw.recipe["ammonia-rocket-fuel"].results = 
-{
-	{type="fluid", name="thruster-fuel", amount=75}
-}
-
-data.raw.recipe["rocket-fuel-from-jelly"].icon = "__alatar-rocketry__/graphics/icons/rocket-fuel-from-jelly.png"
-data.raw.recipe["rocket-fuel-from-jelly"].results = 
-{
-	{type="fluid", name="thruster-fuel", amount=75}
-}
-
-data.raw.recipe["thruster-oxidizer"].icon = "__alatar-rocketry__/graphics/icons/thruster-oxidizer.png"
-data.raw.recipe["thruster-oxidizer"].surface_conditions =
-{
-	{property = "gravity", min = 0, max = 100},
-	{property = "pressure", min = 300, max = 4000}
-}
-data.raw.recipe["thruster-oxidizer"].ingredients =
-{
-    {type = "fluid", name = "water", amount = 75}
-}
-data.raw.recipe["thruster-oxidizer"].results = 
-{
-	{type = "fluid", name = "thruster-oxidizer", amount = 75},
-	{type = "fluid", name = "ammonia", amount = 20}
-}
-
-data.raw.recipe["advanced-thruster-oxidizer"].category = "cryogenics"
-data.raw.recipe["advanced-thruster-oxidizer"].energy_required = 60
-data.raw.recipe["advanced-thruster-oxidizer"].icon = "__alatar-rocketry__/graphics/icons/advanced-thruster-oxidizer.png"
-data.raw.recipe["advanced-thruster-oxidizer"].results = {{type = "fluid", name = "thruster-oxidizer", amount = 250}}
-data.raw.recipe["advanced-thruster-oxidizer"].ingredients = nil
-data.raw.recipe["advanced-thruster-oxidizer"].surface_conditions =
-{
-	{property = "gravity", min = 0, max = 100},
-	{property = "pressure", min = 300, max = 4000}
-}
-
-data.raw.recipe["thruster-fuel"].category = "oil-processing"
-data.raw.recipe["thruster-fuel"].surface_conditions = {{property = "gravity", min = 0, max = 100}}
-data.raw.recipe["thruster-fuel"].ingredients =
-{
-    {type = "fluid", name = "light-oil", amount = 50},
-    {type = "fluid", name = "steam", amount = 25}
-}
-
-data.raw.recipe["advanced-thruster-fuel"].icon = "__alatar-rocketry__/graphics/icons/advanced-thruster-fuel.png"
-data.raw.recipe["advanced-thruster-fuel"].surface_conditions = {{property = "gravity", min = 0, max = 100}}
-data.raw.recipe["advanced-thruster-fuel"].results = {{type = "fluid", name = "thruster-fuel", amount = 150}}
-data.raw.recipe["advanced-thruster-fuel"].ingredients =
-{
-    {type = "item", name = "solid-fuel", amount = 2},
-    {type = "item", name = "calcite", amount = 1},
-    {type = "fluid", name = "steam", amount = 25}
-}
-
-data.raw.recipe["rocket-fuel"].ingredients =
-{
-    {type = "item", name = "solid-fuel", amount = 10},
-    {type = "fluid", name = "ammonia", amount = 20}
-}
-	
-data.raw.recipe["rocket-fuel"].crafting_machine_tint =
-{
-    primary = {r = 0.596, g = 0.764, b = 0.780, a = 1.000},
-    secondary = {r = 0.551, g = 0.762, b = 0.844, a = 1.000},
-    tertiary = {r = 0.596, g = 0.773, b = 0.895, a = 1.000},
-    quaternary = {r = 0.290, g = 0.734, b = 1, a = 1.000},
-}
-
 -------------------------------------------------------------------------- Rocket Silo Modifications
 
 data.raw["rocket-silo"]["rocket-silo"].fluid_boxes =
@@ -128,6 +39,8 @@ data.raw["rocket-silo"]["rocket-silo"].fluid_boxes =
         volume = 100
     }
 }
+
+data.raw["rocket-silo"]["rocket-silo"].rocket_parts_required = 5
 
 -------------------------------------------------------------------------- Thruster Modifications
 data.raw.item["thruster"].icon = "__alatar-rocketry__/graphics/icons/sl-thruster.png"

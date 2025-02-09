@@ -187,8 +187,8 @@ data:extend({
         max_performance = {fluid_volume = 0.8, fluid_usage = 1.5, effectivity = 1},
         fuel_fluid_box =
         {
-            filter = "water",
-            production_type = "none",
+            filter = "thruster-oxidizer",
+            production_type = "input",
             volume = 500,
             pipe_connections =
             {
@@ -197,7 +197,7 @@ data:extend({
         },
         oxidizer_fluid_box =
         {
-            filter = "water",
+            filter = "thruster-oxidizer",
             production_type = "input",
             volume = 500,
             pipe_connections =

@@ -1,4 +1,5 @@
--------------------------------------------------------------------------- Technology Modifications
+-------------------------------------------------------------------------- UNIVERSAL CHANGES
+-------------------------------------------------------------------------- Existing Technology Modifications
 
 data.raw.technology["rocket-silo"].prerequisites =
 {
@@ -64,21 +65,6 @@ data.raw.technology["space-platform-thruster"].unit =
 }
 
 data.raw.technology["rocket-fuel"].icon = "__alatar-rocketry__/graphics/technology/rocket-fuel.png"
-data.raw.technology["rocket-fuel"].effects =
-{
-	{
-		type = "unlock-recipe",
-		recipe = "thruster-fuel"
-	},
-	{
-		type = "unlock-recipe",
-		recipe = "thruster-oxidizer"
-	},
-	{
-        type = "unlock-recipe",
-        recipe = "rocket-fuel"
-    }
-}
 
 data.raw.technology["rocket-fuel-productivity"].icons = util.technology_icon_constant_recipe_productivity("__alatar-rocketry__/graphics/technology/rocket-fuel-productivity.png")
 data.raw.technology["rocket-fuel-productivity"].effects =
@@ -112,18 +98,6 @@ data.raw.technology["rocket-fuel-productivity"].effects =
         type = "change-recipe-productivity",
         recipe = "ammonia-rocket-fuel",
         change = 0.1
-    }
-}
-
-data.raw.technology["plastics"].effects =
-{
-    {
-        type = "unlock-recipe",
-        recipe = "plastic-bar"
-    },
-	{
-        type = "unlock-recipe",
-        recipe = "plastic-bar-from-ammonia"
     }
 }
 
@@ -417,3 +391,58 @@ data:extend(
 		}
 	}
 })
+
+if data.raw.fluid["bob-ammonia"] then
+
+-------------------------------------------------------------------------- WITH BOBMODS
+-------------------------------------------------------------------------- Existing Technology Modifications
+	data.raw.technology["rocket-fuel"].effects =
+	{
+		{
+			type = "unlock-recipe",
+			recipe = "thruster-fuel"
+		},
+		{
+			type = "unlock-recipe",
+			recipe = "thruster-oxidizer"
+		},
+		{
+			type = "unlock-recipe",
+			recipe = "rocket-fuel"
+		},
+		{
+			type = "unlock-recipe",
+			recipe = "hyperglolic-propellant"
+		}
+	}
+else
+-------------------------------------------------------------------------- WITHOUT BOBMODS
+-------------------------------------------------------------------------- Existing Technology Modifications
+	data.raw.technology["rocket-fuel"].effects =
+	{
+		{
+			type = "unlock-recipe",
+			recipe = "thruster-fuel"
+		},
+		{
+			type = "unlock-recipe",
+			recipe = "thruster-oxidizer"
+		},
+		{
+			type = "unlock-recipe",
+			recipe = "rocket-fuel"
+		}
+	}
+
+	data.raw.technology["plastics"].effects =
+	{
+		{
+			type = "unlock-recipe",
+			recipe = "plastic-bar"
+		},
+		{
+			type = "unlock-recipe",
+			recipe = "plastic-bar-from-ammonia"
+		}
+	}
+end

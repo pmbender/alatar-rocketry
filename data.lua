@@ -14,9 +14,14 @@ local asteroid_util = require("__space-age__.prototypes.planet.asteroid-spawn-de
 
 data.raw["fluid"]["thruster-fuel"].auto_barrel = true
 data.raw["fluid"]["thruster-oxidizer"].auto_barrel = true
-data.raw["fluid"]["ammonia"].auto_barrel = true
 data.raw.item["rocket-fuel"].icon = "__alatar-rocketry__/graphics/icons/ammonia-fuel.png"
 data.raw.item["rocket-fuel"].order = "b[chemistry]-a[ammonia-fuel]"
+
+if data.raw.fluid["bob-ammonia"] then
+	-- Nothing currently
+else
+	data.raw["fluid"]["ammonia"].auto_barrel = true
+end
 
 -------------------------------------------------------------------------- Rocket Silo Modifications
 

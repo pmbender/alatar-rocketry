@@ -55,6 +55,69 @@ if data.raw.fluid["bob-ammonia"] and data.raw.fluid["bob-oxygen"] and data.raw.f
 		{type = "fluid", name = "bob-oxygen", amount = 75}
 	}
 	
+	data.raw.recipe["metallic-asteroid-crushing"].results =
+    {
+		{type = "item", name = "iron-ore", amount = 20},
+		{type = "item", name = "bob-nickel-ore", amount = 5},
+		{type = "item", name = "stone", amount = 2},
+		{type = "item", name = "metallic-asteroid-chunk", amount = 1, probability = 0.2}
+    }
+	
+	data.raw.recipe["carbonic-asteroid-crushing"].results =
+    {
+		{type = "item", name = "bob-carbon", amount = 10},
+		{type = "item", name = "stone", amount = 10},
+		{type = "item", name = "ice", amount = 2},
+		{type = "item", name = "carbonic-asteroid-chunk", amount = 1, probability = 0.2}
+    }
+		
+	data.raw.recipe["oxide-asteroid-crushing"].results =
+    {
+		{type = "item", name = "ice", amount = 10},
+		{type = "fluid", name = "bob-carbon-dioxide", amount = 40},
+		{type = "fluid", name = "bob-ammonia", amount = 40},
+		{type = "fluid", name = "bob-hydrogen-peroxide", amount = 8},
+		{type = "item", name = "oxide-asteroid-chunk", amount = 1, probability = 0.2}	
+    }
+	
+	data.raw.recipe["advanced-metallic-asteroid-crushing"].results =
+    {
+		{type = "item", name = "iron-ore", amount = 10},
+		{type = "item", name = "bob-nickel-ore", amount = 4},
+		{type = "item", name = "copper-ore", amount = 4},
+		{type = "item", name = "bob-tin-ore", amount = 2},
+		{type = "item", name = "stone", amount = 2},
+		{type = "item", name = "metallic-asteroid-chunk", amount = 1, probability = 0.05}
+    }
+	
+	data.raw.recipe["advanced-carbonic-asteroid-crushing"].results =
+    {
+		{type = "item", name = "bob-carbon", amount = 5},
+		{type = "item", name = "sulfur", amount = 2},
+		{type = "item", name = "stone", amount = 5},
+		{type = "item", name = "ice", amount = 2},
+		{type = "item", name = "bob-bauxite-ore", amount = 2},
+		{type = "item", name = "carbonic-asteroid-chunk", amount = 1, probability = 0.05}
+    }
+	
+	data.raw.recipe["advanced-oxide-asteroid-crushing"].results =
+    {
+		{type = "item", name = "ice", amount = 5},
+		{type = "fluid", name = "bob-carbon-dioxide", amount = 20},
+		{type = "fluid", name = "bob-ammonia", amount = 20},
+		{type = "fluid", name = "bob-hydrogen-peroxide", amount = 4},
+		{type = "item", name = "calcite", amount = 2},
+		{type = "item", name = "oxide-asteroid-chunk", amount = 1, probability = 0.05}
+    }
+	
+	data.raw.recipe["space-science-pack"].ingredients =
+    {
+		{type = "item", name = "bob-nickel-plate", amount = 2},
+		{type = "item", name = "bob-carbon", amount = 1},
+		{type = "fluid", name = "bob-hydrogen", amount = 20}
+    }
+	
+	data.raw.recipe["space-science-pack"].category = "crafting-with-fluid"
 -------------------------------------------------------------------------- New Recipes
 	data:extend({
 		{
